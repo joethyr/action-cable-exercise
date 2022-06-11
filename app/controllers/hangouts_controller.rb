@@ -1,6 +1,8 @@
 class HangoutsController < ApplicationController
   before_action :authenticate_user!
 
-  def index
-  end
+def index
+  @message = Message.new
+  @messages = Message.includes(:user)
+end
 end
